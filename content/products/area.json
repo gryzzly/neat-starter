@@ -1,17 +1,18 @@
 {
+  "ткань": [
+    "вариант2"
+  ],
+  "created": "2023-03-17T14:09:54.765Z",
+  "modified": "2023-03-17T19:24:39.553Z",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
   },
   "author": "foo",
-  "description": "bar baz\n\n![кровать ареза](/static/img/play_38149_rgb-1.jpg \"кровать ареза\")",
+  "photo": "/static/img/play_38149_rgb-1.jpg",
   "title": "area",
   "tags": [
     "created"
   ],
-  "modified": "2023-03-17T14:21:07.208Z",
-  "created": "2023-03-17T14:09:54.765Z",
-  "ткань": [
-    "вариант2"
-  ]
+  "description": "bar baz\n\n![кровать ареза](/static/img/play_38149_rgb-1.jpg \"кровать ареза\")"
 }
