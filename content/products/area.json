@@ -4,12 +4,12 @@
     "width": "200cm"
   },
   "author": "foo",
-  "description": "bar baz ",
+  "description": "bar baz  \n\n\n\n![кровать ареза](/static/img/play_38149_rgb-1.jpg \"кровать ареза\")",
   "title": "area",
   "tags": [
     "created"
   ],
-  "modified": "2023-03-17T14:10:17.139Z",
+  "modified": "2023-03-17T14:17:30.980Z",
   "created": "2023-03-17T14:09:54.765Z",
   "ткань": [
     "вариант2"
