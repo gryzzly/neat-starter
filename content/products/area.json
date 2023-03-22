@@ -6,7 +6,7 @@
     "вариант2"
   ],
   "created": "2023-03-17T14:09:54.765Z",
-  "modified": "2023-03-18T12:53:20.484Z",
+  "modified": "2023-03-22T23:09:59.899Z",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
@@ -21,5 +21,5 @@
   "tags": [
     "created"
   ],
-  "description": "bar baz\n\n![](/static/img/play_38149_rgb-1.jpg)"
+  "description": "bar baz\n\n![](content/img/screenshot-2022-07-12-at-17.40.09.png)"
 }
