@@ -74,6 +74,7 @@
       "label": "Страницы",
       "name": "страницы",
       "folder": "content/pages",
+      "format": "json",
       "create": true,
       "editor": {
         "preview": false
