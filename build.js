@@ -111,6 +111,7 @@ Object.entries(pages).map(([path, content]) => {
 
   fs.writeFileSync(path, Buffer.from((content)));
 });
+
 console.log(pages);
 // TODO:
 // generate pages from template for data on route
