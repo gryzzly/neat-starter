@@ -1,0 +1,25 @@
+{
+  "fabric": [
+    "вариант2"
+  ],
+  "ткань": [
+    "вариант2"
+  ],
+  "created": "2023-03-17T14:09:54.765Z",
+  "modified": "2023-03-17T19:37:06.925Z",
+  "размеры": {
+    "length": "100cm",
+    "width": "200cm"
+  },
+  "author": "foos",
+  "dimensions": {
+    "length": "130 cm",
+    "width": "240 cm"
+  },
+  "photo": "/static/img/play_38149_rgb-1.jpg",
+  "title": "arsa",
+  "tags": [
+    "created"
+  ],
+  "description": "bar baz\n\n![кровать ареза](/static/img/play_38149_rgb-1.jpg \"кровать ареза\")"
+}

@@ -1,0 +1,247 @@
+{
+  "backend": {
+    "name": "git-gateway",
+    "branch": "master"
+  },
+  "media_folder": "content/img",
+  "public_folder": "content/img",
+  "locale": "ru",
+  # "local_backend": true,
+  "collections": [
+    {
+      "label": "Продукты",
+      "name": "products",
+      "folder": "content/products",
+      "format": "json",
+      "editor": {
+        "preview": false
+      },
+      "create": true,
+      "fields": [
+        {
+          "label": "Название",
+          "name": "title",
+          "widget": "string"
+        },
+        {
+          "label": "Описание",
+          "name": "description",
+          "widget": "markdown"
+        },
+        {
+          "label": "Модель",
+          "name": "author",
+          "widget": "string"
+        },
+        {
+          "label": "Фотография",
+          "name": "photo",
+          "widget": "image"
+        },
+        {
+          "label": "Размеры",
+          "name": "dimensions",
+          "widget": "object",
+          "fields": [
+            {
+              "label": "длина",
+              "name": "length",
+              "widget": "string"
+            },
+            {
+              "label": "ширина",
+              "name": "width",
+              "widget": "string"
+            }
+          ]
+        },
+        {
+          "widget": "select",
+          "label": "ткань",
+          "name": "fabric",
+          "multiple": true,
+          "create": true,
+          "options": [
+            "вариант1",
+            "вариант2",
+            "вариант3",
+            "вариант4"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Страницы",
+      "name": "страницы",
+      "folder": "content/pages",
+      "create": true,
+      "editor": {
+        "preview": false
+      },
+      "fields": [
+        {
+          "label": "Ссылка",
+          "description": "/ - это главная страница, все ссылки начинаются с /",
+          "name": "path" ,
+          "widget": "string"
+        },
+        {
+          "label": "Title",
+          "name": "title",
+          "widget": "string"
+        },
+        {
+          "label": "Описание",
+          "name": "description",
+          "widget": "string"
+        },
+        {
+          "label": "Изображение",
+          "name": "image",
+          "widget": "image"
+        },
+        {
+          "label": "Содержание",
+          "name": "body",
+          "widget": "markdown"
+        }
+      ]
+    },
+    {
+      "label": "Настройки",
+      "name": "настройки",
+      "editor": {
+        "preview": false
+      },
+      "files": [
+        {
+          "label": "Navigation",
+          "name": "items",
+          "file": "content/data/navigation.json",
+          "fields": [
+            {
+              "label": "Nav Items",
+              "name": "items",
+              "widget": "list",
+              "allow_add": true,
+              "collapsed": false,
+              "fields": [
+                {
+                  "label": "Название пункта меню",
+                  "name": "text",
+                  "widget": "string"
+                },
+                {
+                  "label": "URL",
+                  "name": "url",
+                  "widget": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Общие настройки сайта",
+          "name": "общие настройки",
+          "file": "content/data/settings.json",
+          "fields": [
+            {
+              "label": "Имя",
+              "name": "name",
+              "widget": "string"
+            },
+            {
+              "label": "Авор",
+              "name": "author",
+              "widget": "string"
+            },
+            {
+              "label": "URL",
+              "name": "url",
+              "widget": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+# backend:
+#   # Use netlify identity as backend
+#   name: git-gateway
+#   branch: master
+# media_folder: "src/static/img"
+# public_folder: "/static/img"
+
+
+# locale: 'ru'
+
+# # Please run "npx netlify-cms-proxy-server" for local backend
+# local_backend: true
+# # publish_mode: editorial_workflow
+# collections:
+
+#   - label: "Продукты"
+#     name: "products"
+#     folder: "content/products"
+#     format: "json"
+#     editor:
+#       preview: false
+#     create: true
+#     fields:
+#       - { label: "Название", name: "title", widget: "string" }
+#       - { label: "Описание", name: "description", widget: "markdown" }
+#       - { label: "Модель", name: "author", widget: "string" }
+#       - { label: "Фотография", name: "photo", widget: "image" }
+#       - label: "Размеры"
+#         name: "dimensions"
+#         widget: "object"
+#         fields:
+#           - { label: "длина", name: "length", widget: "string" }
+#           - { label: "ширина", name: "width", widget: "string" }
+#       - widget: select
+#         label: "ткань"
+#         name: "fabric"
+#         multiple: true
+#         create: true
+#         options: ["вариант1", "вариант2", "вариант3", "вариант4"]
+  
+#   - label: "Страницы"
+#     name: "страницы"
+#     folder: "content/pages"
+#     create: true
+#     editor:
+#       preview: false
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Description", name: "description", widget: "string" }
+#       - { label: "Author", name: "author", widget: "string" }
+#       - { label: "Publish Date", name: "date", widget: "datetime" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+
+#   - label: "Настройки"
+#     name: "настройки"
+#     editor:
+#       preview: false
+#     files:
+#       - label: "Navigation"
+#         name: "items"
+#         file: "content/data/navigation.json"
+#         fields:
+#           - label: Nav Items
+#             name: items
+#             widget: list
+#             allow_add: false
+#             collapsed: false
+#             fields:
+#               - { label: Название пункта меню, name: text, widget: string }
+#               - { label: URL, name: url, widget: string }
+#       - label: "Общие настройки сайта"
+#         name: "общие настройки"
+#         file: "content/data/settings.json"
+#         fields:
+#           - { label: Имя, name: name, widget: string }
+#           - { label: Авор, name: author, widget: string }
+#           - { label: URL, name: url, widget: string }
+  
+  
