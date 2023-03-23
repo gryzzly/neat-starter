@@ -6,7 +6,7 @@
     "вариант2"
   ],
   "created": "2023-03-17T14:09:54.765Z",
-  "modified": "2023-03-22T23:09:59.899Z",
+  "modified": "2023-03-23T00:21:01.659Z",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
@@ -16,10 +16,10 @@
     "length": "110 cm",
     "width": "200 cm"
   },
-  "photo": "/static/img/play_38149_rgb-1.jpg",
+  "photo": "http://balex.co.il/image/cache/catalog/cento/cento_02-1100x681.jpg",
   "title": "areas",
   "tags": [
     "created"
   ],
-  "description": "bar baz\n\n![](content/img/screenshot-2022-07-12-at-17.40.09.png)"
+  "description": "bar baz\n\n![](http://balex.co.il/image/cache/catalog/cento/cento_02-1100x681.jpg)"
 }
