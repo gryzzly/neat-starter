@@ -4,7 +4,7 @@
     "branch": "master"
   },
   "media_folder": "content/img",
-  "public_folder": "content/img",
+  "public_folder": "img",
   "locale": "ru",
   # "local_backend": true,
   "collections": [

@@ -15,9 +15,9 @@ const cmsConfig =
 
 function getProducts() {
   const productsPath = cmsConfig.collections[0].folder;
-  const pagePath = cmsConfig.collections[1].folder;
-  if (getProducts.cache) {
-    return getProducts.cache;
+  
+  if (getProducts.products) {
+    return getProducts.products;
   }
   // todo: find page matching the path of this route and 
   // add its content to the page
@@ -37,18 +37,43 @@ function getProducts() {
       return result;
     }, {});
 
-  getProducts.cache = products;
+  getProducts.products = products;
 
   return products;
 }
+
+function getPageData() {
+  if (getPageData.pages) return pages;
+  const pagesPath = cmsConfig.collections[1].folder;
+  const pages = fs.readdirSync(pagesPath)
+    .map(fileName => {
+      const pagePath = path.join(pagesPath, fileName);
+      const pageFile = {
+        path: pagePath,
+        content: JSON.parse(fs.readFileSync(pagePath, 'utf8')),
+      };
+      pageFile.name = pageFile.content.path;
+      return pageFile;
+    })
+    .reduce((result, current) => {
+      result[current.name] = current.content;
+      return result;
+    }, {});
+  return pages;
+}
+
 const routes = [
   {
     path: '/',
     getData() {
-      return getProducts();
+      return {
+        products: getProducts(),
+        page: getPageData()['/'],
+      }
     },
-    template(products) {
-      return `<div class="homepage">Hello</div>
+    template({products, page}) {
+      return `<div class="homepage">${page.title}</div>
+        <img src=${page.image} />
         ${
           Object.values(products).map(
             ({title, fileName}) => `<li><a href="/products/${fileName}">${title}</a></li>`
