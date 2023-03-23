@@ -72,13 +72,15 @@ const routes = [
       }
     },
     template({products, page}) {
-      return `<div class="homepage">${page.title}</div>
+      return `<div class="homepage"
+      <h2>${page.title}</h2>
         <img src=${page.image} />
         ${
           Object.values(products).map(
             ({title, fileName}) => `<li><a href="/products/${fileName}">${title}</a></li>`
           ).join('')
         }
+        </div>
       `
     }
   },
