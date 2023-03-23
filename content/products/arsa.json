@@ -6,7 +6,7 @@
     "вариант2"
   ],
   "created": "2023-03-17T14:09:54.765Z",
-  "modified": "2023-03-23T00:22:57.127Z",
+  "modified": "2023-03-23T00:24:30.899Z",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
@@ -16,10 +16,10 @@
     "length": "130 cm",
     "width": "240 cm"
   },
-  "photo": "http://balex.co.il/image/cache/catalog/arezza/arezza_corner_02-1100x681.jpg",
+  "photo": "https://balex.co.il/image/cache/catalog/arezza/arezza_corner_02-1100x681.jpg",
   "title": "arsa",
   "tags": [
     "created"
   ],
-  "description": "bar baz\n\n![](http://balex.co.il/image/cache/catalog/arezza/arezza_corner_02-1100x681.jpg)"
+  "description": "bar baz\n\n![](https://balex.co.il/image/cache/catalog/arezza/arezza_corner_02-1100x681.jpg)"
 }
