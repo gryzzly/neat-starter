@@ -1,8 +1,29 @@
 import fs from 'fs';
 import path from 'path';
 
-import parse from './vendor/snarkdown.js';
+import getParse from './vendor/snarkdown.js';
 import { layout } from './layout.js';
+
+const imgixDomain = "https://balex.imgix.net/";
+
+// FIXME: make this work with absolute urls from other domains
+const imgTemplate = ({src, alt}) => {
+  const widthsPx = [640, 1024, 1980];
+  const srcset = widthsPx.map(width => 
+    `${imgixDomain}/${src}?auto=format&w=${width} ${width}w`
+  ).join(',');
+
+return `<img
+  srcset="${srcset}"
+    src="${imgixDomain}/${src}?auto=format&w=${widthsPx[0]}"
+    alt="${alt}"
+    sizes="100vw"
+  >`
+};
+
+const parse = getParse({
+  img: imgTemplate
+});
 
 const buildDir = 'build';
 
@@ -72,9 +93,9 @@ const routes = [
       }
     },
     template({products, page}) {
-      return `<div class="homepage"
-      <h2>${page.title}</h2>
-        <img src=${page.image} />
+      return `<div class="homepage">
+        <h2>${page.title}</h2>
+        ${imgTemplate({src: page.image, alt: page.title })}
         ${
           Object.values(products).map(
             ({title, fileName}) => `<li><a href="/products/${fileName}">${title}</a></li>`
@@ -96,7 +117,7 @@ const routes = [
       return `<div class="product">
         <h1>${title}</h1>
         <h2>${parse(description)}</h2>
-        <img src=${photo} alt="фотография ${title}"/>
+        ${imgTemplate({src: photo, alt: `фотография ${title}`})}
         <dl>
           <dt>ширина</dt>
           <dd>${dimensions.width}</dd>
