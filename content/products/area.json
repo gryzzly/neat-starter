@@ -6,7 +6,7 @@
     "вариант2"
   ],
   "created": "2023-03-17T14:09:54.765Z",
-  "modified": "2023-03-23T00:24:47.555Z",
+  "modified": "2023-03-24T00:21:14.488Z",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
@@ -21,5 +21,5 @@
   "tags": [
     "created"
   ],
-  "description": "bar baz\n\n![](https://balex.co.il/image/cache/catalog/cento/cento_02-1100x681.jpg)"
+  "description": "bar baz\n\n![](img/arezza_corner_02-1100x681.jpg)"
 }
