@@ -6,11 +6,6 @@
         <title>Content Manager</title>
     </head>
     <body>
-        <script>
-        if (location.hash && location.hash.indexOf('#invite_token=') === 0) {
-            location = `/admin/${location.hash}`;
-        }
-        </script>
         <script type="module">
             import netlifyCmsApp from 'https://cdn.jsdelivr.net/npm/netlify-cms-app@2.15.72/+esm'
             import {ru} from 'https://cdn.jsdelivr.net/npm/netlify-cms-locales@1.39.0/+esm'

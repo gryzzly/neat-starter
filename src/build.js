@@ -1,23 +1,31 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import getParse from './vendor/snarkdown.js';
+import getParse from '../vendor/snarkdown.js';
+import { getImageDimensions } from './get-image-dimensions.js';
 import { layout } from './layout.js';
 
 const imgixDomain = "https://balex.imgix.net/";
 
 // FIXME: make this work with absolute urls from other domains
+
+// Via srcset, the browser knows the resources available 
+// and their widths. Via sizes it knows the width of the <img> 
+// for a given window width. It can now pick the best
+// resource to load.
 const imgTemplate = ({src, alt}) => {
-  const widthsPx = [640, 1024, 1980];
-  const srcset = widthsPx.map(width => 
+  const {width, height} = getImageDimensions(src);
+  const widths = [width, Math.floor((width/3)*2), Math.floor(width/3)];
+  const srcset = widths.map(width => 
     `${imgixDomain}/${src}?auto=format&w=${width} ${width}w`
   ).join(',');
 
 return `<img
   srcset="${srcset}"
-    src="${imgixDomain}/${src}?auto=format&w=${widthsPx[0]}"
-    alt="${alt}"
-    sizes="100vw"
+  src="${imgixDomain}/${src}?auto=format&w=${widths[0]}"
+  alt="${alt}"
+  sizes="100vw"
+  style="aspect-ratio: ${width}/${height}"
   >`
 };
 
@@ -87,8 +95,10 @@ const routes = [
   {
     path: '/',
     getData() {
+      const products = getProducts();
+      
       return {
-        products: getProducts(),
+        products,
         page: getPageData()['/'],
       }
     },
@@ -157,7 +167,7 @@ Object.entries(pages).map(([path, content]) => {
   const dir = path.replace(/index\.html$/, '');
   fs.existsSync(dir) || fs.mkdirSync(dir, {recursive: true});
 
-  fs.writeFileSync(path, Buffer.from((content)));
+  fs.writeFileSync(path, content);
 });
 
 console.log(pages);
