@@ -57,7 +57,7 @@ export function getImageDimensions(imagePath) {
       throw new Error('Unsupported image type');
   }
 
-  return { width, height };
+  return { width, height, type };
 }
 
 function getImageType(header) {

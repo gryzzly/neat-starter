@@ -6,6 +6,8 @@ import { getImageDimensions } from './get-image-dimensions.js';
 import { layout } from './layout.js';
 
 const imgixDomain = "https://balex.imgix.net/";
+const ucarecdn = "https://10c1520917af0bff2053.ucr.io/"
+const balex = "https://7balex.netlify.app/"
 
 // FIXME: make this work with absolute urls from other domains
 
@@ -14,19 +16,34 @@ const imgixDomain = "https://balex.imgix.net/";
 // for a given window width. It can now pick the best
 // resource to load.
 const imgTemplate = ({src, alt}) => {
-  const {width, height} = getImageDimensions(src);
+  const {width, height, type} = getImageDimensions(src);
   const widths = [width, Math.floor((width/3)*2), Math.floor(width/3)];
+
+  if (type === 'gif') {
+    return `<video 
+      width="${width}"
+      height="${height}" 
+      autoplay loop muted webkit-playsinline playsinline
+    >
+      <source src="${ucarecdn}gif2video/-/format/webm/${balex}${src}" type="video/webm"/>
+      <source src="${ucarecdn}gif2video/-/format/mp4/${balex}${src}" type="video/mp4"/>
+    </video>`
+  }
+
   const srcset = widths.map(width => 
     `${imgixDomain}/${src}?auto=format&w=${width} ${width}w`
   ).join(',');
 
-return `<img
-  srcset="${srcset}"
-  src="${imgixDomain}/${src}?auto=format&w=${widths[0]}"
-  alt="${alt}"
-  sizes="100vw"
-  style="aspect-ratio: ${width}/${height}"
-  >`
+  const srcFallback = `${imgixDomain}/${src}?auto=format&w=${widths[0]}`;
+
+  return `<img
+    srcset="${srcset}"
+    src="${srcFallback}"
+    alt="${alt}"
+    sizes="100vw"
+    lazy="true"
+    style="aspect-ratio: ${width}/${height}"
+  >`;
 };
 
 const parse = getParse({
