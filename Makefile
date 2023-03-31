@@ -11,6 +11,7 @@ server:
 	python3 -m http.server --directory ./build
 
 watch: 
+	# $(call deno) run -A --watch='./**/*.js,./**.html' src/build.js
 	chokidar --silent "**/*.js" "**.html" -i "build/**" -c "$(MAKE) build"
 	
 build: $(DENO_BIN)

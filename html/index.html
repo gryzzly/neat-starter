@@ -7,7 +7,7 @@ html {
   background: #EFEFEF;
   font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
 }
-img {
+.image {
   mask-image: linear-gradient(#EFEFEF 60%, transparent);
   display: block;
   width: 90%;
@@ -16,26 +16,40 @@ img {
   animation: fadein .75s;
 }
 @media (min-width:720px)  {
-  img {
-    width: 70%;
+  .image {
+    width: 50%;
   }
 }
 h1 {
-  margin: 0 auto;
+  margin: .25em auto;
   font-weight: normal;
   text-align: center;
   z-index: 1;
   position: relative;
 }
-img:first-child {
+@media (min-width:720px)  {
+  h1 {
+    font-size: 3em;
+  }
+}
+.whatsapp {
+  position: relative;
+  display: block;
+  width: 189px;
+  margin: 2em auto;
+  z-index: 1;
+}
+
+.img-header {
   position: relative;
   top: -10vw;
   margin-bottom: -10vw;
 }
-img:last-child {
+.img-footer {
   position: relative;
   top: -10vw;
 }
+
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -43,6 +57,7 @@ img:last-child {
 }
 </style>
 <img 
+  class="image img-header"
   src="./1200x856.webp"
   height="1200" 
   alt="Фотография дивана Asti фирмы Puszman"
@@ -51,7 +66,11 @@ img:last-child {
 <h1>23 года работы!</h1>
 <h1>Склад. Наария.</h1>
 <h1>+972549212604</h1>
+<a class="whatsapp" aria-label="Chat on WhatsApp" href="https://wa.me/972549212604">
+  <img alt="Chat on WhatsApp" src="./WhatsAppButtonGreenMedium.svg" />
+</a>
 <img
+  class="image img-footer"
   src="./800x571.webp"
   height="800" 
   style="aspect-ratio: 800/571";
