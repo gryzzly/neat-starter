@@ -5,17 +5,17 @@ include deno.mk
 .PHONY: build start
 
 start: build
-	make -j 2 server watch
+	$(MAKE) -j 2 server watch
 	
 server: 
 	python3 -m http.server --directory ./build
 
 watch: 
-	chokidar "**/*.js" "**.html" -c "make build"
+	chokidar --silent "**/*.js" "**.html" -i "build/**" -c "$(MAKE) build"
 	
 build: $(DENO_BIN)
-	$(call deno, run -A src/build.js)
-	cp -r admin	build/
-	cp -r html build/
-	mkdir -p build/content
-	cp -r content/img build/content
+	@$(call deno, run -A src/build.js)
+	@cp -r admin	build/
+	@cp -r html build/
+	@mkdir -p build/content
+	@cp -r content/img build/content
