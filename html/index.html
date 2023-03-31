@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 <style>
 html {
   background: #EFEFEF;
@@ -9,15 +10,37 @@ html {
 img {
   mask-image: linear-gradient(#EFEFEF 60%, transparent);
   display: block;
-  width: 50%;
+  width: 90%;
   height: auto;
   margin: 0 auto;
+  animation: fadein .25s;
+}
+@media (min-width:720px)  {
+  img {
+    width: 70%;
+  }
 }
 h1 {
   width: 50%;
   margin: 0 auto;
   font-weight: normal;
   text-align: center;
+  z-index: 1;
+  position: relative;
+}
+img:first-child {
+  position: relative;
+  top: -10vw;
+  margin-bottom: -10vw;
+}
+img:last-child {
+  position: relative;
+  top: -10vw;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 </style>
 <img 

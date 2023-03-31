@@ -7,7 +7,10 @@ export function layout(content) {
 <script>
 if (
   location.hash && 
-  location.hash.indexOf('#invite_token=') === 0
+  (
+    location.hash.indexOf('#invite_token=') === 0 || 
+    location.hash.indexOf('#access_token=') === 0)
+  )
 ) {
   location.href = \`/admin/\${location.hash}\`;
 }
