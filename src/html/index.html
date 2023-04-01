@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ru">
 <meta charset="utf-8">
@@ -39,7 +40,6 @@ h1 {
   margin: 2em auto;
   z-index: 1;
 }
-
 .img-header {
   position: relative;
   top: -10vw;
@@ -49,8 +49,6 @@ h1 {
   position: relative;
   top: -10vw;
 }
-
-
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -58,7 +56,17 @@ h1 {
 </style>
 <img 
   class="image img-header"
-  src="./1200x856.webp"
+  srcset="
+    https://balex.imgix.net/content/img/1200x856.webp?auto=format&w=300 w300,
+    https://balex.imgix.net/content/img/1200x856.webp?auto=format&w=600 w600
+    https://balex.imgix.net/content/img/1200x856.webp?auto=format&w=900 w900
+    https://balex.imgix.net/content/img/1200x856.webp?auto=format&w=1200 w1200
+  "
+  sizes="
+    (min-width:720px) 50vw,
+    90vw
+  "
+  src="https://balex.imgix.net/content/img/1200x856.webp"
   height="1200" 
   alt="Фотография дивана Asti фирмы Puszman"
   style="aspect-ratio: 1200/856;"
@@ -71,7 +79,16 @@ h1 {
 </a>
 <img
   class="image img-footer"
-  src="./800x571.webp"
+  src="https://balex.imgix.net/content/img/800x571.webp"
+  srcset="
+    https://balex.imgix.net/content/img/800x571.webp?auto=format&w=300 w300,
+    https://balex.imgix.net/content/img/800x571.webp?auto=format&w=600 w600
+    https://balex.imgix.net/content/img/800x571.webp?auto=format&w=800 w800
+  "
+  sizes="
+    (min-width:720px) 50vw,
+    90vw
+  "
   height="800" 
   style="aspect-ratio: 800/571";
   alt="Фотография разложенного дивана Asti фирмы Puszman"
