@@ -6,20 +6,21 @@
     "вариант2"
   ],
   "created": "2023-03-17T14:09:54.765Z",
-  "modified": "2023-03-24T18:23:48.030Z",
+  "modified": "2023-04-10T23:26:49.157Z",
+  "available": "3 дня",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
   },
-  "author": "foos",
+  "author": "Asti",
   "dimensions": {
     "length": "130 cm",
     "width": "240 cm"
   },
-  "photo": "content/img/cento_02-1100x681.jpg",
-  "title": "arsa",
+  "photo": "content/img/screenshot-2023-04-11-at-01.24.53.png",
+  "title": "Asti УГЛОВОЙ ДИВАН",
   "tags": [
     "created"
   ],
-  "description": "bar baz\n\n![](content/img/cento_02-1100x681.jpg)"
+  "description": "Угловой диван ASTI имеет встроенную кровать и контейнер для постельных принадлежностей.\n\nКроме того, он оснащен трансформирующимисяся подголовниками, которые повышают комфорт отдыха.\n\n![Asti размеры схема](content/img/asti_dim.jpeg)\n\n![анимация сборки и разборки Asti](content/img/asti_mov.gif)"
 }
