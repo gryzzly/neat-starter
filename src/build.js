@@ -121,16 +121,23 @@ const routes = [
     },
     template({products, page}) {
       return `<div class="homepage">
-        <h2>${page.title}</h2>
-        ${imgTemplate({src: page.image, alt: page.title })}
+        <!-- ${imgTemplate({src: page.image, alt: page.title })} -->
+        <div class="homepage-products">
         ${
           Object.values(products).map(
-            ({title, fileName}) => `<li><a href="/products/${fileName}">${title}</a></li>`
+            ({title, fileName, photo}) => 
+              `<div>
+                  <a href="/products/${fileName}">
+                    ${imgTemplate({src: photo, alt: title })}
+                  </a>
+            </div>`
           ).join('')
         }
+        </ul>
         </div>
       `
     }
+    // use page.title for document.title
   },
   {
     path: ({id}) => `/products/${id}`,
@@ -141,16 +148,52 @@ const routes = [
       }));
     },
     template({title, description, dimensions, photo}) {
-      return `<div class="product">
-        <h1>${title}</h1>
-        <h2>${parse(description)}</h2>
-        ${imgTemplate({src: photo, alt: `фотография ${title}`})}
-        <dl>
-          <dt>ширина</dt>
-          <dd>${dimensions.width}</dd>
-          <dt>длина</dt>
-          <dd>${dimensions.length}</dd>
-        </dl>
+      return `<style>
+      .product {
+        padding: 1em 10vw;
+      }
+      
+      .product h1,
+      .product h2 {
+        font-size: 1.5em;
+      }
+      .product-properties {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10vw;
+        margin: 0 0 2em;
+      }
+      @media (min-width: 600px) {
+        .product-properties {
+          grid-template-columns: 1.5fr 1fr;
+        } 
+      }
+      .product-properties img {
+        border: 1px solid #999;
+      }
+      .product-properties dt {
+        font-weight: bold;
+      }
+      .product-properties dd {
+        margin-bottom: .5em;
+      }
+      .product-description {
+        width: 70%;
+      }
+      </style>
+      <div class="product">
+        <div class="product-properties">
+          ${imgTemplate({src: photo, alt: `фотография ${title}`})}
+          <dl>
+            <dt>модель</dt>
+            <dd>${title}</dd>
+            <dt>ширина</dt>
+            <dd>${dimensions.width}</dd>
+            <dt>длина</dt>
+            <dd>${dimensions.length}</dd>
+          </dl>
+        </div>
+        <div class="product-description">${parse(description)}</div>
     </div>`
     } 
   }

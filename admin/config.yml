@@ -34,6 +34,11 @@
           "widget": "string"
         },
         {
+          "label": "Наличие",
+          "name": "available",
+          "widget": "string"
+        },
+        {
           "label": "Фотография",
           "name": "photo",
           "widget": "image"
