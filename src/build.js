@@ -54,7 +54,7 @@ const buildDir = 'build';
 
 const cmsConfig = 
   JSON.parse(
-    fs.readFileSync('./admin/config.yml', 'utf-8')
+    fs.readFileSync('./src/admin/config.yml', 'utf-8')
     // remove yml-style comments before parsing JSON
       .replace(/(?:\s*)#.*/gm,'')
   );
