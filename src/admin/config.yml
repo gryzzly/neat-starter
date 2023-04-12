@@ -29,17 +29,7 @@
           "widget": "markdown"
         },
         {
-          "label": "Модель",
-          "name": "author",
-          "widget": "string"
-        },
-        {
-          "label": "Наличие",
-          "name": "available",
-          "widget": "string"
-        },
-        {
-          "label": "Фотография",
+          "label": "Главная Фотография",
           "name": "photo",
           "widget": "image"
         },
@@ -57,20 +47,12 @@
               "label": "ширина",
               "name": "width",
               "widget": "string"
+            },
+            {
+              "label": "глубина",
+              "name": "depth",
+              "widget": "string"
             }
-          ]
-        },
-        {
-          "widget": "select",
-          "label": "ткань",
-          "name": "fabric",
-          "multiple": true,
-          "create": true,
-          "options": [
-            "вариант1",
-            "вариант2",
-            "вариант3",
-            "вариант4"
           ]
         }
       ]

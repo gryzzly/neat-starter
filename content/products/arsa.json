@@ -1,18 +1,10 @@
 {
-  "fabric": [
-    "вариант2"
-  ],
-  "ткань": [
-    "вариант2"
-  ],
   "created": "2023-03-17T14:09:54.765Z",
   "modified": "2023-04-10T23:35:40.403Z",
-  "available": "3 дня",
   "размеры": {
     "length": "100cm",
     "width": "200cm"
   },
-  "author": "Asti",
   "dimensions": {
     "length": "130 cm",
     "width": "240 cm"
