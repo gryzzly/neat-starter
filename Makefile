@@ -17,9 +17,9 @@ watch: $(DENO_BIN)
 	$(call deno) run --watch="$(printf "%s," ./src/**/*.{html,js})"  -A src/build.js
 
 static:
-	cp -r src/html build/
-	cp -r src/admin	build/
+	mkdir -p build
+	cp -r src/{html,admin} build/
 	mkdir -p build/content && cp -r content/img build/content
 	
-build: $(DENO_BIN) static
+build: static $(DENO_BIN)
 	$(call deno) run -A src/build.js
