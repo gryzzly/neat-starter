@@ -178,7 +178,12 @@ const routes = [
         margin-bottom: .5em;
       }
       .product-description {
-        width: 70%;
+        margin: 0 auto;
+      }
+      @media (min-width: 600px) {
+        .product-description {
+          width: 60%;
+        }
       }
       </style>
       <div class="product">

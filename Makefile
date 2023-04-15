@@ -18,7 +18,6 @@ watch: $(DENO_BIN)
 
 static:
 	mkdir -p build
-	ls -la ./src/
 	cp -r ./src/html build/
 	cp -r ./src/admin build/
 	mkdir -p build/content && cp -r content/img build/content

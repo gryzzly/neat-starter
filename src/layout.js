@@ -17,6 +17,7 @@ if (
 <style>
 body {
   font-family: sans-serif;
+  margin-bottom: 10px;
 }
 h1, h2, h3 {
   font-weight: normal;
@@ -89,8 +90,6 @@ video {
     <nav class="nav">
       <ul>
         <li><a href="/">Главная</a></li>
-        <!-- <li><a href="/catalog">Каталог</a></li> -->
-        <li>Контакты</li>
       </ul>
     </nav>
   </header>
