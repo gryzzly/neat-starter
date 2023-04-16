@@ -27,7 +27,7 @@
           "label": "Описание",
           "name": "description",
           "widget": "markdown",
-          "required": "false"
+          "required": false
         },
         {
           "label": "Главная Фотография",
@@ -38,25 +38,25 @@
           "label": "Размеры",
           "name": "dimensions",
           "widget": "object",
-          "required": "false",
+          "required": false,
           "fields": [
             {
               "label": "длина",
               "name": "length",
               "widget": "string",
-              "required": "false"
+              "required": false
             },
             {
               "label": "ширина",
               "name": "width",
               "widget": "string",
-              "required": "false"
+              "required": false
             },
             {
               "label": "глубина",
               "name": "depth",
               "widget": "string",
-              "required": "false"
+              "required": false
             }
           ]
         }
