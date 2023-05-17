@@ -193,11 +193,11 @@ const routes = [
             <dt>модель</dt>
             <dd>${title}</dd>
             <dt>ширина</dt>
-            <dd>${dimensions.width || ''}</dd>
+            <dd>${dimensions?.width || ''}</dd>
             <dt>длина</dt>
-            <dd>${dimensions.length || ''}</dd>
+            <dd>${dimensions?.length || ''}</dd>
             <dt>глубина</dt>
-            <dd>${dimensions.depth || ''}</dd>
+            <dd>${dimensions?.depth || ''}</dd>
           </dl>
         </div>
         <div class="product-description">${parse(description)}</div>
