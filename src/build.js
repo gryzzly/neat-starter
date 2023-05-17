@@ -108,6 +108,10 @@ function getPageData() {
   return pages;
 }
 
+function ifDefined(condition, content) {
+  return (condition) ? content : '';
+}
+
 const routes = [
   {
     path: '/',
@@ -192,12 +196,21 @@ const routes = [
           <dl>
             <dt>модель</dt>
             <dd>${title}</dd>
-            <dt>ширина</dt>
-            <dd>${dimensions?.width || ''}</dd>
-            <dt>длина</dt>
-            <dd>${dimensions?.length || ''}</dd>
-            <dt>глубина</dt>
-            <dd>${dimensions?.depth || ''}</dd>
+            ${ifDefined(
+              dimensions?.width,
+                `<dt>ширина</dt>
+                <dd>${dimensions?.width || ''}</dd>`
+            )}
+            ${ifDefined(
+              dimensions?.length,
+                `<dt>длина</dt>
+                <dd>${dimensions?.length || ''}</dd>`
+            )}
+            ${ifDefined(
+              dimensions?.depth,
+                `<dt>глубина</dt>
+                <dd>${dimensions?.depth || ''}</dd>`
+            )}
           </dl>
         </div>
         <div class="product-description">${parse(description)}</div>

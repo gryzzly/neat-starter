@@ -50,6 +50,9 @@ a {
   margin: 0 0 .5em;
   font-weight: bold;
 }
+.page-header .logo a {
+  color: inherit;
+}
 .page-header .nav {
   padding: 0 10vw;
   text-transform: uppercase;
@@ -86,7 +89,7 @@ video {
 <body>
   <header class="page-header">
     <h2><span class="location">Наария</span> <span class="phone-number">тел. 0549212603</span></h2>
-    <h1 class="logo">balexcomfort</h1>
+    <h1 class="logo"><a href="/">balexcomfort</a></h1>
     <nav class="nav">
       <ul>
         <li><a href="/">Главная</a></li>
